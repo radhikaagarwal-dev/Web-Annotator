@@ -1,3 +1,63 @@
-body{
-    font-family : Arial;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e293b;
+    color: white;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Text Area */
+.text-area {
+    flex: 2;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.editable {
+    min-height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Notes Area */
+.notes-area {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.notes-list {
+    margin-top: 10px;
 }

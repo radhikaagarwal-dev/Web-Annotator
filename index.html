@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web-Annotator</title>
-    
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>WEB-ANNOTATOR</h1>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Web Annotator</h1>
+        <p>Highlight text and add notes easily</p>
     </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Text-Area  -->
+        <section class="text-area">
+            <h2>Text Area</h2>
+            <div class="editable" contenteditable="true">
+                Paste or type your text here and start annotating...
+            </div>
+
+            <div class="buttons">
+                <button>Highlight</button>
+                <button>Add Note</button>
+                <button>Clear</button>
+            </div>
+        </section>
+
+        <!-- Notes Panel -->
+        <section class="notes-area">
+            <h2>Annotations</h2>
+            <ul class="notes-list">
+                <li>No annotations yet</li>
+            </ul>
+        </section>
+
+    </main>
+
+    
+    <script src="script.js"></script>
+
 </body>
 </html>
