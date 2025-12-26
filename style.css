@@ -30,13 +30,25 @@ body {
     background: white;
     padding: 15px;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .editable {
-    min-height: 200px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 10px;
+    
+    min-height: 260px;
+    border: 1px solid #d1d5db;
+    padding: 14px;
+    margin-top: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+    border-radius: 6px;
+    background-color: #fafafa;
+    outline: none;
+}
+
+.editable:focus {
+    border-color: #2563eb;
+    background-color: #ffffff;
 }
 
 /* Buttons */
@@ -45,10 +57,33 @@ body {
 }
 
 button {
-    padding: 8px 12px;
+    padding: 8px 14px;
     margin-right: 8px;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
 }
+
+button:hover {
+    opacity: 0.9;
+}
+
+.buttons button:first-child {
+    background-color: #2563eb;
+    color: white;
+}
+
+.buttons button:nth-child(2) {
+    background-color: #10b981;
+    color: white;
+}
+
+.buttons button:nth-child(3) {
+    background-color: #ef4444;
+    color: white;
+}
+
 
 /* Notes Area */
 .notes-area {
@@ -56,8 +91,26 @@ button {
     background: white;
     padding: 15px;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .notes-list {
     margin-top: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.notes-area h2 {
+    margin-bottom: 10px;
+}
+
+
+.notes-list li {
+    background-color: #f9fafb;
+    border-left: 4px solid #2563eb;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #374151;
 }
