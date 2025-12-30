@@ -1,9 +1,10 @@
 // ==============================
-// DAY 1: Notes Add + Select Logic
+// DAY 1 + DAY 2: Web Annotator
 // ==============================
 
 // Selecting elements
 const addNoteBtn = document.getElementById("AddNoteBtn");
+const clearBtn = document.getElementById("ClearBtn");
 const notesList = document.querySelector(".notes-list");
 const editableArea = document.querySelector(".editable");
 
@@ -28,6 +29,19 @@ addNoteBtn.addEventListener("click", () => {
 });
 
 // ------------------------------
+// Clear active note
+// ------------------------------
+clearBtn.addEventListener("click", () => {
+  if (activeNoteId === null) return;
+
+  const activeNote = notes.find(note => note.id === activeNoteId);
+  activeNote.text = "";
+
+  editableArea.innerText = "";
+  renderNotes();
+});
+
+// ------------------------------
 // Render notes in sidebar
 // ------------------------------
 function renderNotes() {
@@ -35,12 +49,21 @@ function renderNotes() {
 
   if (notes.length === 0) {
     notesList.innerHTML = "<li>No annotations yet</li>";
+    activeNoteId = null;
+    editableArea.innerText = "";
     return;
   }
 
   notes.forEach(note => {
     const li = document.createElement("li");
-    li.innerText = note.text || "New Annotation";
+
+    // Preview text (first 25 chars)
+    const previewText =
+      note.text.length > 25
+        ? note.text.slice(0, 25) + "..."
+        : note.text || "New Annotation";
+
+    li.innerText = previewText;
 
     // Highlight active note
     if (note.id === activeNoteId) {
@@ -69,4 +92,23 @@ editableArea.addEventListener("input", () => {
   activeNote.text = editableArea.innerText;
 
   renderNotes();
+});
+
+// ------------------------------
+// Delete active note (keyboard support)
+// ------------------------------
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Delete" && activeNoteId !== null) {
+    notes = notes.filter(note => note.id !== activeNoteId);
+
+    if (notes.length > 0) {
+      activeNoteId = notes[0].id;
+      editableArea.innerText = notes[0].text;
+    } else {
+      activeNoteId = null;
+      editableArea.innerText = "";
+    }
+
+    renderNotes();
+  }
 });
