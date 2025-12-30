@@ -69,17 +69,17 @@ button:hover {
     opacity: 0.9;
 }
 
-.buttons button:first-child {
+#HighlightBtn {
     background-color: #2563eb;
     color: white;
 }
 
-.buttons button:nth-child(2) {
+#AddNoteBtn {
     background-color: #10b981;
     color: white;
 }
 
-.buttons button:nth-child(3) {
+#ClearBtn {
     background-color: #ef4444;
     color: white;
 }
