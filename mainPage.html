@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Annotex | Annotator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="mainPage.css">
+</head>
+<body>
+
+    <!-- ========== TOP TOOLBAR ========== -->
+    <header id="toolbar">
+        <h2 class="app-name">Annotex</h2>
+
+        <div class="tool-buttons">
+            <button id="highlight-btn">Highlight</button>
+            <button id="add-note-btn">Add Note</button>
+            <button id="clear-btn">Clear</button>
+        </div>
+    </header>
+
+    <!-- ========== MAIN WORKSPACE ========== -->
+    <main id="workspace">
+
+        <!-- EDITOR PANEL (70%) -->
+        <section id="editor-section">
+            <h3>Editor</h3>
+
+            <div id="editor" contenteditable="true">
+                <p>Paste or type your text here to start annotating...</p>
+            </div>
+        </section>
+
+        <!-- NOTES PANEL (30%) -->
+        <section id="notes-section">
+            <h3>Annotations</h3>
+
+            <div id="notes-container">
+                <p class="empty-text">No annotations yet.</p>
+            </div>
+        </section>
+
+    </main>
+ <script src="mainPage.js"></script>
+</body>
+</html>
